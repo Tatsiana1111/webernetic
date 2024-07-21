@@ -4,27 +4,29 @@
     <meta charset="UTF-8">
     <title>Demo-version</title>
     <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 </head>
 <body>
-<div>
-    <div>
-        <h2>Title</h2>
-        <p>Text</p>
-        <button>button</button>
+<div class="container">
+    <div class="main">
+        <h2 class="title">Демо-версия</h2>
+        <p class="description">За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500 средних и малых проектов. Используя знания и накопленный опыт мы можем предложить </p>
+        <button class="demo-btn">Попробовать бесплатно<div class="demo-btn-icon"></div>
+        </button>
     </div>
     <img alt="image" src="./public/image.png">
 </div>
 
-<div>
-    <button>X</button>
+<div class="modal">
+    <button class="close-btn">X</button>
     <form>
         <p>Log in</p>
         <input type="text">
         <input type="text">
         <checkbox>Remember me</checkbox>
         <a href="#">Recovery</a>
-        <button>Login</button>
-        <button>Logout</button>
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Sign up</button>
     </form>
 </div>
 <script src="index.ts"></script>
