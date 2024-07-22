@@ -1,7 +1,42 @@
-.container {
-    margin: 1%;
-    display: flex;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+ul[class],
+ol[class] {
+    padding: 0;
+}
+
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+
+body {
     font-family: 'Manrope', sans-serif;
+}
+.container {
+    display: none;
+    margin: 1%;
+    /*display: flex;*/
 }
 
 .main {
@@ -14,7 +49,166 @@
 }
 
 .modal {
+    position: relative;
+    padding: 20px;
+    width: 500px;
+    background-color: #f0f4fc;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    p {
+        font-size: 26px;
+        margin: 20px 0;
+        align-self: flex-start;
+    }
+
+
+}
+.text-field {
+    margin: 5px 0;
+    display: block;
+    width: 450px;
+    height: calc(2.25rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #d7e2f6;
+    background-clip: padding-box;
+    border: none;
+    outline: none;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.text-field::placeholder {
+    color: #1f4284;
+    font-size: 16px;
+}
+
+.label {
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding-left: 26px;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    align-self: flex-start;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+.label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.label input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
     display: none;
+}
+
+.label input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.label .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    img {
+        width: 36px;
+        height: 36px;
+    }
+}
+.recovery {
+    margin: 10px 0;
+    align-self: flex-start;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:  #244c98;
+    font-size: 20px;
+}
+.login-btn {
+    cursor: pointer;
+    margin: 5px 0;
+    width: 450px;
+    background-color: #244c98;
+    color: white;
+    padding: 15px 32px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0.25rem;
+}
+.signup-btn {
+    cursor: pointer;
+    margin: 5px 0;
+    width: 450px;
+    background-color: transparent;
+    border: 2px solid #244c98;
+    color: #244c98;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0.25rem;
+}
+.form {
+
+    display: flex;
+    flex-direction: column;
 }
 
 img {
@@ -33,13 +227,15 @@ img {
 
 .demo-btn {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     cursor: pointer;
-    width: 220px;
-    padding: 10px;
+    width: 250px;
+    font-size: 16px;
+    padding: 20px;
     color: white;
     background-color: #244c98;
     border: none;
+    outline: none;
     border-radius: 40px;
     position: relative;
 }
@@ -48,20 +244,16 @@ img {
 }
 .demo-btn-icon{
     position: absolute;
-    height: 20px;
-    width: 20px;
+    height: 36px;
+    width: 36px;
     background-image: url(./public/icon.png);
-    background-size: 20px 20px;
+    background-size: 36px 36px;
     background-repeat: no-repeat;
-    left: 85%;
+    left: 82%;
     top: 20%;
 }
 
-.circle {
-    background-color: white;
-    margin: 10px;
-    border-radius: 50%;
-}
+
 
 @media (max-width: 1440px) {
     img, .main {
@@ -75,6 +267,9 @@ img {
     }
     img, .main {
         min-width: 75%;
+    }
+    .title, .description, .demo-btn {
+        margin: 10px 10px 0 10px;
     }
 }
 
