@@ -11,24 +11,24 @@
     <div class="main">
         <h2 class="title">Демо-версия</h2>
         <p class="description">За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500 средних и малых проектов. Используя знания и накопленный опыт мы можем предложить </p>
-        <button class="demo-btn">Попробовать бесплатно
+        <button class="demo-btn" id="open-modal-btn">Попробовать бесплатно
             <div class="demo-btn-icon"></div>
         </button>
     </div>
     <img alt="image" src="./public/image.png">
 </div>
 
-<div class="modal">
-    <button class="close-btn">
+<div class="modal" id="modal">
+    <button class="close-btn" id="close-modal-btn">
         <img  alt="modal-close" src="./public/modal-close.png">
     </button>
-    <form class="form">
+    <form class="form" id="login-form">
         <p>Войти в систему</p>
         <label>
-            <input class="text-field" placeholder="Email/Телефон" type="text"/>
+            <input class="text-field" id="email" placeholder="Email/Телефон" type="text"/>
         </label>
         <label>
-            <input class="text-field" placeholder="Пароль" type="text"/>
+            <input class="text-field" id="password" placeholder="Пароль" type="text"/>
         </label>
         <label class="label" for="remember">
             <input class="checkbox" id="remember" name="remember" type="checkbox"/>
@@ -36,10 +36,10 @@
             <span class="checkmark"></span>
         </label>
         <button class="recovery">Восстановить</button>
-        <button class="login-btn">Войти</button>
+        <button class="login-btn" type="submit">Войти</button>
         <button class="signup-btn">Зарегистрироваться</button>
     </form>
 </div>
-<script src="index.ts"></script>
+<script src="dist/index.js"></script>
 </body>
 </html>
